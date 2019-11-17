@@ -1,3 +1,7 @@
 #!/bin/sh -l
 
-echo "hello $1"
+echo "Use PHPUnit ${INPUT_PHPUNIT_VERSION}"
+
+phpunit/docker-install-phpunit ${INPUT_PHPUNIT_VERSION}
+
+exec $@

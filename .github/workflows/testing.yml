@@ -1,0 +1,12 @@
+name: Testing
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test for PHPUnit
+        uses: mileschou/php-tools-action/phpunit@master
+        with:
+          args: phpunit --help
