@@ -1,5 +1,7 @@
 # PHP tool action
 
+[![GitHub Release](https://img.shields.io/github/tag/MilesChou/php-tools-action.svg)](https://github.com/MilesChou/php-tools-action/releases)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 ![](https://github.com/MilesChou/php-tools-action/workflows/Testing/badge.svg)
 
 PHP tool integrate in GitHub Actions.
