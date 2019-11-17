@@ -1,6 +1,9 @@
 name: PHP tool Action
 description: PHP tool Actions\
 author: MilesChou
+branding:
+  icon: code
+  color: green
 inputs: 
   phpunit_version:
     description: PHPUnit version
