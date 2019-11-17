@@ -11,6 +11,6 @@ elfi
     echo "Use PHPUnit latest"
 fi
 
-curl -LO https://phar.phpunit.de/${PHPUNIT_FILENAME}
+curl -LOs https://phar.phpunit.de/${PHPUNIT_FILENAME}
 chmod +x ${PHPUNIT_FILENAME}
 mv ${PHPUNIT_FILENAME} /usr/local/bin/phpunit
