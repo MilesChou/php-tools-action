@@ -1,0 +1,7 @@
+#!/bin/sh
+
+set -e
+
+curl -LO https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar
+chmod +x phpcs.phar
+mv phpcs.phar /usr/local/bin/phpcs

@@ -10,3 +10,7 @@ jobs:
         uses: mileschou/php-tools-action/phpunit@master
         with:
           args: phpunit --help
+      - name: Test for PHPCS
+        uses: mileschou/php-tools-action/phpcs@master
+        with:
+          args: phpcs --help
