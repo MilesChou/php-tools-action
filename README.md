@@ -58,6 +58,30 @@ With args
     args: some.php
 ```
 
+### `phpmetrics`
+
+> See https://github.com/phpmetrics/PhpMetrics
+
+Run with default config.
+
+```yaml
+- uses: MilesChou/php-tools-action/phpmetrics@master
+```
+
+With another PHP version
+
+```yaml
+- uses: MilesChou/php-tools-action/7.0/phpmetrics@master
+```
+
+With args
+
+```yaml
+- uses: MilesChou/php-tools-action/phpmetrics@master
+  with:
+    args: some.php
+```
+
 ### `phpunit`
 
 > See https://github.com/sebastianbergmann/phpunit

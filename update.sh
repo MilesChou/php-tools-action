@@ -44,5 +44,8 @@ build_dockerfile phpcs
 echo "Build Dockerfile for PHP Mess Detector ..."
 build_dockerfile phpmd
 
+echo "Build Dockerfile for PhpMetrics ..."
+build_dockerfile phpmetrics
+
 echo "Build Dockerfile for PHPUnit ..."
 build_dockerfile phpunit
