@@ -14,11 +14,30 @@ jobs:
         uses: mileschou/php-tools-action/phpunit@master
         with:
           args: --help
+
       - name: Test for PHP CodeSniffer on PHP 5.5
         uses: mileschou/php-tools-action/5.5/phpcs@master
         with:
           args: --help
       - name: Test for PHP CodeSniffer
         uses: mileschou/php-tools-action/phpcs@master
+        with:
+          args: --help
+
+      - name: Test for PHP Mess Detector on PHP 5.6
+        uses: mileschou/php-tools-action/5.6/phpmd@master
+        with:
+          args: --version
+      - name: Test for PHP Mess Detector
+        uses: mileschou/php-tools-action/phpmd@master
+        with:
+          args: --version
+
+      - name: Test for PHP PhpMetrics on PHP 7.0
+        uses: mileschou/php-tools-action/5.5/phpmetrics@master
+        with:
+          args: --help
+      - name: Test for PHP PhpMetrics
+        uses: mileschou/php-tools-action/phpmetrics@master
         with:
           args: --help
