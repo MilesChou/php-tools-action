@@ -1,0 +1,6 @@
+FROM php:%%PHP_VERSION%%
+
+COPY docker-install-phpmd /usr/local/bin/
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh", "phpmd"]

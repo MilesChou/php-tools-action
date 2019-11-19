@@ -32,6 +32,28 @@ With args
     args: some.php
 ```
 
+### `phpmd`
+
+Run with default config.
+
+```yaml
+- uses: MilesChou/php-tools-action/phpmd@master
+```
+
+With another PHP version
+
+```yaml
+- uses: MilesChou/php-tools-action/5.6/phpmd@master
+```
+
+With args
+
+```yaml
+- uses: MilesChou/php-tools-action/phpmd@master
+  with:
+    args: some.php
+```
+
 ### `phpunit`
 
 Run with default config

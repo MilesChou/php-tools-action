@@ -41,5 +41,8 @@ VERSIONS="
 echo "Build Dockerfile for PHP CodeSniffer ..."
 build_dockerfile phpcs
 
+echo "Build Dockerfile for PHP Mess Detector ..."
+build_dockerfile phpmd
+
 echo "Build Dockerfile for PHPUnit ..."
 build_dockerfile phpunit
