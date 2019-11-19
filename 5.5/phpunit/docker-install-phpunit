@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+PHPUNIT_FILENAME=phpunit.phar
+
+if [[ "$1" != "" ]]; then
+    echo "Use PHPUnit {$1}"
+    PHPUNIT_FILENAME=phpunit-$1.phar
+else
+    echo "Use PHPUnit latest"
+fi
+
+echo "Download from https://phar.phpunit.de/${PHPUNIT_FILENAME} ..."
+curl -LOs https://phar.phpunit.de/${PHPUNIT_FILENAME}
+
+chmod +x ${PHPUNIT_FILENAME}
+mv ${PHPUNIT_FILENAME} /usr/local/bin/phpunit

@@ -6,11 +6,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Test for PHPUnit on PHP 7.2
+        uses: mileschou/php-tools-action/7.2/phpunit@master
+        with:
+          args: --help
       - name: Test for PHPUnit
         uses: mileschou/php-tools-action/phpunit@master
         with:
           args: --help
-      - name: Test for PHPCS
+      - name: Test for PHP CodeSniffer on PHP 5.5
+        uses: mileschou/php-tools-action/5.5/phpcs@master
+        with:
+          args: --help
+      - name: Test for PHP CodeSniffer
         uses: mileschou/php-tools-action/phpcs@master
         with:
           args: --help

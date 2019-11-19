@@ -3,9 +3,9 @@
 #
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
-FROM php:7.3-alpine
+FROM php:7.1-alpine
 
-COPY docker-install-phpcs /usr/local/bin/
+COPY docker-install-phpunit /usr/local/bin/
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh", "phpcs"]
+ENTRYPOINT ["/entrypoint.sh", "phpunit"]
