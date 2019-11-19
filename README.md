@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/tag/MilesChou/php-tools-action.svg)](https://github.com/MilesChou/php-tools-action/releases)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
-![](https://github.com/MilesChou/php-tools-action/workflows/Testing/badge.svg)
+[![](https://github.com/MilesChou/php-tools-action/workflows/Testing/badge.svg)](https://github.com/MilesChou/php-tools-action/actions)
 
 PHP tool integrate in GitHub Actions.
 
@@ -18,6 +18,12 @@ Run with default config.
 - uses: MilesChou/php-tools-action/phpcs@master
 ```
 
+With another PHP version
+
+```yaml
+- uses: MilesChou/php-tools-action/5.5/phpcs@master
+```
+
 With args
 
 ```yaml
@@ -28,10 +34,16 @@ With args
 
 ### `phpunit`
 
-Run with default config.
+Run with default config
 
 ```yaml
 - uses: MilesChou/php-tools-action/phpunit@master
+```
+
+With another PHP version
+
+```yaml
+- uses: MilesChou/php-tools-action/7.2/phpunit@master
 ```
 
 With args
@@ -42,7 +54,7 @@ With args
     args: --configuration my-phpunit.xml
 ```
 
-With version
+With PHPUnit version
 
 ```yaml
 - uses: MilesChou/php-tools-action/phpunit@master
