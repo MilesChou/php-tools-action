@@ -82,6 +82,26 @@ With args
     args: some.php
 ```
 
+### `phpstan`
+
+> See https://github.com/phpstan/phpstan
+
+Run with default config.
+
+```yaml
+- uses: MilesChou/php-tools-action/phpstan@master
+```
+
+With args
+
+```yaml
+- uses: MilesChou/php-tools-action/phpstan@master
+  with:
+    args: some.php
+```
+
+> PHPStan require PHP ^7.1, so just support PHP 7.3.
+
 ### `phpunit`
 
 > See https://github.com/sebastianbergmann/phpunit

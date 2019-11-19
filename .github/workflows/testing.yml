@@ -33,11 +33,16 @@ jobs:
         with:
           args: --version
 
-      - name: Test for PHP PhpMetrics on PHP 7.0
+      - name: Test for PHP PhpMetrics on PHP 5.5
         uses: mileschou/php-tools-action/5.5/phpmetrics@master
         with:
           args: --help
       - name: Test for PHP PhpMetrics
         uses: mileschou/php-tools-action/phpmetrics@master
+        with:
+          args: --help
+
+      - name: Test for PHPStan
+        uses: mileschou/php-tools-action/phpstan@master
         with:
           args: --help
