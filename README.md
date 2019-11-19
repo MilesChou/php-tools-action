@@ -12,6 +12,8 @@ Following is some example.
 
 ### `phpcs`
 
+> See https://github.com/squizlabs/PHP_CodeSniffer
+
 Run with default config.
 
 ```yaml
@@ -34,6 +36,8 @@ With args
 
 ### `phpmd`
 
+> See https://github.com/phpmd/phpmd
+
 Run with default config.
 
 ```yaml
@@ -55,6 +59,8 @@ With args
 ```
 
 ### `phpunit`
+
+> See https://github.com/sebastianbergmann/phpunit
 
 Run with default config
 
