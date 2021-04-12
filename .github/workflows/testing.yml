@@ -6,6 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
       - name: Test for PHPUnit on PHP 7.2
         uses: mileschou/php-tools-action/7.2/phpunit@master
         with:
