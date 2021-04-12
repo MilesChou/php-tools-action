@@ -56,10 +56,6 @@ jobs:
         with:
           args: --version
 
-      - name: Test for PHP PhpMetrics on PHP 5.5
-        uses: ./5.5/phpmetrics
-        with:
-          args: --help
       - name: Test for PHP PhpMetrics on PHP 7.4
         uses: ./7.4/phpmetrics
         with:
