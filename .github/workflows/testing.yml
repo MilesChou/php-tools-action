@@ -22,7 +22,7 @@ jobs:
         with:
           args: --help
       - name: Test for PHPUnit
-        uses: mileschou/php-tools-action/phpunit
+        uses: ./phpunit
         with:
           args: --help
 
@@ -39,7 +39,7 @@ jobs:
         with:
           args: --help
       - name: Test for PHP CodeSniffer
-        uses: mileschou/php-tools-action/phpcs
+        uses: ./phpcs
         with:
           args: --help
 
@@ -56,7 +56,7 @@ jobs:
         with:
           args: --version
       - name: Test for PHP Mess Detector
-        uses: mileschou/php-tools-action/phpmd
+        uses: ./phpmd
         with:
           args: --version
 
