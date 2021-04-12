@@ -9,10 +9,6 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Test for PHPUnit on PHP 7.2
-        uses: ./7.2/phpunit
-        with:
-          args: --help
       - name: Test for PHPUnit on PHP 7.4
         uses: ./7.4/phpunit
         with:
