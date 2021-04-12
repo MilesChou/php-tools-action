@@ -10,74 +10,74 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Test for PHPUnit on PHP 7.2
-        uses: mileschou/php-tools-action/7.2/phpunit@${GITHUB_REF##*/}
+        uses: ./7.2/phpunit
         with:
           args: --help
       - name: Test for PHPUnit on PHP 7.4
-        uses: mileschou/php-tools-action/7.4/phpunit@${GITHUB_REF##*/}
+        uses: ./7.4/phpunit
         with:
           args: --help
       - name: Test for PHPUnit on PHP 8.0
-        uses: mileschou/php-tools-action/8.0/phpunit@${GITHUB_REF##*/}
+        uses: ./8.0/phpunit
         with:
           args: --help
       - name: Test for PHPUnit
-        uses: mileschou/php-tools-action/phpunit@${GITHUB_REF##*/}
+        uses: mileschou/php-tools-action/phpunit
         with:
           args: --help
 
       - name: Test for PHP CodeSniffer on PHP 5.5
-        uses: mileschou/php-tools-action/5.5/phpcs@${GITHUB_REF##*/}
+        uses: ./5.5/phpcs
         with:
           args: --help
       - name: Test for PHP CodeSniffer on PHP 7.4
-        uses: mileschou/php-tools-action/7.4/phpcs@${GITHUB_REF##*/}
+        uses: ./7.4/phpcs
         with:
           args: --help
       - name: Test for PHP CodeSniffer on PHP 8.0
-        uses: mileschou/php-tools-action/8.0/phpcs@${GITHUB_REF##*/}
+        uses: ./8.0/phpcs
         with:
           args: --help
       - name: Test for PHP CodeSniffer
-        uses: mileschou/php-tools-action/phpcs@${GITHUB_REF##*/}
+        uses: mileschou/php-tools-action/phpcs
         with:
           args: --help
 
       - name: Test for PHP Mess Detector on PHP 5.6
-        uses: mileschou/php-tools-action/5.6/phpmd@${GITHUB_REF##*/}
+        uses: ./5.6/phpmd
         with:
           args: --version
       - name: Test for PHP Mess Detector on PHP 7.2
-        uses: mileschou/php-tools-action/7.2/phpmd@${GITHUB_REF##*/}
+        uses: ./7.2/phpmd
         with:
           args: --version
       - name: Test for PHP Mess Detector on PHP 8.0
-        uses: mileschou/php-tools-action/8.0/phpmd@${GITHUB_REF##*/}
+        uses: ./8.0/phpmd
         with:
           args: --version
       - name: Test for PHP Mess Detector
-        uses: mileschou/php-tools-action/phpmd@${GITHUB_REF##*/}
+        uses: mileschou/php-tools-action/phpmd
         with:
           args: --version
 
       - name: Test for PHP PhpMetrics on PHP 5.5
-        uses: mileschou/php-tools-action/5.5/phpmetrics@${GITHUB_REF##*/}
+        uses: ./5.5/phpmetrics
         with:
           args: --help
       - name: Test for PHP PhpMetrics on PHP 7.4
-        uses: mileschou/php-tools-action/7.4/phpmetrics@${GITHUB_REF##*/}
+        uses: ./7.4/phpmetrics
         with:
           args: --help
       - name: Test for PHP PhpMetrics on PHP 8.0
-        uses: mileschou/php-tools-action/8.0/phpmetrics@${GITHUB_REF##*/}
+        uses: ./8.0/phpmetrics
         with:
           args: --help
       - name: Test for PHP PhpMetrics
-        uses: mileschou/php-tools-action/phpmetrics@${GITHUB_REF##*/}
+        uses: ./phpmetrics
         with:
           args: --help
 
       - name: Test for PHPStan
-        uses: mileschou/php-tools-action/phpstan@${GITHUB_REF##*/}
+        uses: ./phpstan
         with:
           args: --help
