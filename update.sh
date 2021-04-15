@@ -36,6 +36,8 @@ VERSIONS="
 7.1
 7.2
 7.3
+7.4
+8.0
 "
 
 echo "Build Dockerfile for PHP CodeSniffer ..."
