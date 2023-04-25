@@ -13,7 +13,6 @@ generated_warning() {
 build_dockerfile() {
     echo "Build ./${1}/Dockerfile ..."
     generated_warning > ./${1}/Dockerfile
-    cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
 
     for version in ${VERSIONS}; do
         echo "Build ./${version}/${1}/Dockerfile ..."
@@ -24,10 +23,17 @@ build_dockerfile() {
 
         cp ./${1}/entrypoint.sh ${version}/${1}/entrypoint.sh
         cp ./${1}/docker-install-${1} ${version}/${1}/docker-install-${1}
-    done
-}
 
-LATEST_VERSION=7.3
+        LATEST_VERSION=${version}
+    done
+
+    echo "Build ./${1}/Dockerfile using latest version (${LATEST_VERSION})..."
+
+    rm -f ./${1}/Dockerfile
+    generated_warning > ./${LATEST_VERSION}/${1}/Dockerfile
+    cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
+
+}
 
 VERSIONS="
 5.5
@@ -38,6 +44,8 @@ VERSIONS="
 7.3
 7.4
 8.0
+8.1
+8.2
 "
 
 echo "Build Dockerfile for PHP CodeSniffer ..."

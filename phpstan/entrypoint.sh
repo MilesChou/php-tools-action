@@ -4,4 +4,4 @@ set -e
 
 docker-install-phpstan
 
-exec $@
+exec "$@"

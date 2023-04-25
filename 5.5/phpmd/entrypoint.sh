@@ -4,4 +4,4 @@ set -e
 
 docker-install-phpmd
 
-exec $@
+exec "$@"
