@@ -17,6 +17,14 @@ jobs:
         uses: ./8.0/phpunit
         with:
           args: --help
+      - name: Test for PHPUnit on PHP 8.0
+        uses: ./8.1/phpunit
+        with:
+          args: --help
+      - name: Test for PHPUnit on PHP 8.0
+        uses: ./8.2/phpunit
+        with:
+          args: --help
       - name: Test for PHPUnit
         uses: ./phpunit
         with:
@@ -32,6 +40,14 @@ jobs:
           args: --help
       - name: Test for PHP CodeSniffer on PHP 8.0
         uses: ./8.0/phpcs
+        with:
+          args: --help
+      - name: Test for PHP CodeSniffer on PHP 8.0
+        uses: ./8.1/phpcs
+        with:
+          args: --help
+      - name: Test for PHP CodeSniffer on PHP 8.0
+        uses: ./8.2/phpcs
         with:
           args: --help
       - name: Test for PHP CodeSniffer
@@ -51,6 +67,14 @@ jobs:
         uses: ./8.0/phpmd
         with:
           args: --version
+      - name: Test for PHP Mess Detector on PHP 8.0
+        uses: ./8.1/phpmd
+        with:
+          args: --version
+      - name: Test for PHP Mess Detector on PHP 8.0
+        uses: ./8.2/phpmd
+        with:
+          args: --version
       - name: Test for PHP Mess Detector
         uses: ./phpmd
         with:
@@ -62,6 +86,14 @@ jobs:
           args: --help
       - name: Test for PHP PhpMetrics on PHP 8.0
         uses: ./8.0/phpmetrics
+        with:
+          args: --help
+      - name: Test for PHP PhpMetrics on PHP 8.0
+        uses: ./8.1/phpmetrics
+        with:
+          args: --help
+      - name: Test for PHP PhpMetrics on PHP 8.0
+        uses: ./8.2/phpmetrics
         with:
           args: --help
       - name: Test for PHP PhpMetrics

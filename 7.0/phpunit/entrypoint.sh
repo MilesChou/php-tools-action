@@ -4,4 +4,4 @@ set -e
 
 docker-install-phpunit ${INPUT_PHPUNIT_VERSION}
 
-exec $@
+exec "$@"

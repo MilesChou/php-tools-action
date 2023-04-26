@@ -4,4 +4,4 @@ set -e
 
 docker-install-phpcs
 
-exec $@
+exec "$@"

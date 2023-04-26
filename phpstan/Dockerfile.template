@@ -1,0 +1,6 @@
+FROM php:%%PHP_VERSION%%
+
+COPY docker-install-phpstan /usr/local/bin/
+COPY entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh", "phpstan"]

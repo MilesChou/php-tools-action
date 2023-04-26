@@ -4,4 +4,4 @@ set -e
 
 docker-install-phpmetrics
 
-exec $@
+exec "$@"
