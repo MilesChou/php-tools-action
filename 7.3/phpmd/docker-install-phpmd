@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-
-echo "Download from https://github.com/phpmd/phpmd/releases/latest/download/phpmd.phar ..."
-curl -LOs https://github.com/phpmd/phpmd/releases/latest/download/phpmd.phar
-chmod +x phpmd.phar
-mv phpmd.phar /usr/local/bin/phpmd

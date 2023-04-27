@@ -1,0 +1,17 @@
+name: Master Workflow
+
+on:
+  push:
+
+jobs:
+  version-matrix:
+    strategy:
+      # super important if you want to see all results, even if one fails
+      # fail-fast is true by default
+      fail-fast: false
+      matrix:
+        version: [5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0, 8.1, 8.2]
+    uses: ./.github/workflows/common-workflow.yaml # calls the one above ^
+    with:
+      version: ${{ matrix.version }}
+    secrets: inherit

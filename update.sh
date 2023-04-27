@@ -1,61 +1,15 @@
 #!/usr/bin/env bash
 
-generated_warning() {
-	cat <<-EOH
-		#
-		# NOTE: THIS DOCKERFILE IS GENERATED VIA "update.sh"
-		#
-		# PLEASE DO NOT EDIT IT DIRECTLY.
-		#
-	EOH
-}
+versions=('5.5' '5.6' '7.0' '7.1' '7.2' '7.3' '7.4' '8.0' '8.1' '8.2')
 
-build_dockerfile() {
-    echo "Build ./${1}/Dockerfile ..."
-    generated_warning > ./${1}/Dockerfile
+declare PHP_IMAGES
 
-    for version in ${VERSIONS}; do
-        echo "Build ./${version}/${1}/Dockerfile ..."
-        mkdir -p ${version}/${1}
+for i in "${versions[@]}"
+do
+  PHP_IMAGES="$PHP_IMAGES""$seperator""php:$i-alpine"
+  seperator=', '
+done
 
-        generated_warning > ./${version}/${1}/Dockerfile
-        cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${version}-alpine"'!' >> ./${version}/${1}/Dockerfile
-
-        cp ./${1}/entrypoint.sh ${version}/${1}/entrypoint.sh
-        cp ./${1}/docker-install-${1} ${version}/${1}/docker-install-${1}
-
-        LATEST_VERSION=${version}
-    done
-
-    echo "Build ./${1}/Dockerfile using latest version (${LATEST_VERSION})..."
-
-    rm -f ./${1}/Dockerfile
-    generated_warning > ./${LATEST_VERSION}/${1}/Dockerfile
-    cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
-
-}
-
-VERSIONS="
-5.5
-5.6
-7.0
-7.1
-7.2
-7.3
-7.4
-8.0
-8.1
-8.2
-"
-
-echo "Build Dockerfile for PHP CodeSniffer ..."
-build_dockerfile phpcs
-
-echo "Build Dockerfile for PHP Mess Detector ..."
-build_dockerfile phpmd
-
-echo "Build Dockerfile for PhpMetrics ..."
-build_dockerfile phpmetrics
-
-echo "Build Dockerfile for PHPUnit ..."
-build_dockerfile phpunit
+declare php_image_string="php-image: [${PHP_IMAGES}]"
+cd .github/workflows || exit
+sed -i '' "s/php-image:.*$/$php_image_string/g" test-variable-in-uses.yaml
