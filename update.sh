@@ -12,4 +12,4 @@ done
 
 declare php_image_string="php-image: [${PHP_IMAGES}]"
 cd .github/workflows || exit
-sed -i '' "s/php-image:.*$/$php_image_string/g" test-variable-in-uses.yaml
+sed -i '' "s/php-image:.*$/$php_image_string/g" testing.yaml
