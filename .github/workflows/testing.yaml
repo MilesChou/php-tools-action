@@ -8,17 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-image: [php:5.5-alpine, php:5.6-alpine, php:7.0-alpine, php:7.1-alpine, php:7.2-alpine, php:7.3-alpine, php:7.4-alpine, php:8.0-alpine, php:8.1-alpine, php:8.2-alpine]
+        php-image: ['5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1', '8.2']
     steps:
       - name: Git checkout
         uses: actions/checkout@v3
       - name: Test for PHP CodeSniffer in root dir
-        run: docker build ./phpcs --build-arg PHP_IMAGE=${{ matrix.php-image }}
+        run: docker build ./${{ matrix.php-image }}/phpcs
       - name: Test for PHP Mess Detector in root dir
-        run: docker build ./phpmd --build-arg PHP_IMAGE=${{ matrix.php-image }}
+        run: docker build ./${{ matrix.php-image }}/phpmd
       - name: Test for PHP PhpMetrics in root dir
-        run: docker build ./phpmetrics --build-arg PHP_IMAGE=${{ matrix.php-image }}
+        run: docker build ./${{ matrix.php-image }}/phpmetrics
       - name: Test for PHPUnit in root dir
-        run: docker build ./phpunit --build-arg PHP_IMAGE=${{ matrix.php-image }}
+        run: docker build ./${{ matrix.php-image }}/phpunit
       - name: Test for PHPStan in root dir
-        run: docker build ./phpstan --build-arg PHP_IMAGE=${{ matrix.php-image }}
+        run: docker build ./${{ matrix.php-image }}/phpstan

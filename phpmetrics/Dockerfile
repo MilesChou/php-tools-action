@@ -1,5 +1,4 @@
-ARG PHP_IMAGE
-FROM $PHP_IMAGE
+FROM php:8.2-alpine
 
 COPY docker-install-phpmetrics /usr/local/bin/
 COPY entrypoint.sh /entrypoint.sh
