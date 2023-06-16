@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+echo "Download from https://github.com/phpstan/phpstan/releases/latest/download/phpstan.phar ..."
+curl -LOs https://github.com/phpstan/phpstan/releases/latest/download/phpstan.phar
+chmod +x phpstan.phar
+mv phpstan.phar /usr/local/bin/phpstan

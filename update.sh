@@ -27,8 +27,10 @@ build_dockerfile() {
     echo "Build ./${version}/${1}/Dockerfile ..."
     mkdir -p ${version}/${1}
 
+    rm -f ./${version}/${1}/Dockerfile
     generated_warning > ./${version}/${1}/Dockerfile
     cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${version}-alpine"'!' >> ./${version}/${1}/Dockerfile
+    git add ./${version}/${1}/Dockerfile
 
     rm -f ./${version}/${1}/entrypoint.sh
     cp ./${1}/entrypoint.sh ./${version}/${1}/entrypoint.sh
@@ -65,3 +67,6 @@ build_dockerfile phpmetrics
 
 echo "Build Dockerfile for PHPUnit ..."
 build_dockerfile phpunit
+
+echo "Build Dockerfile for PHPStan ..."
+build_dockerfile phpstan
