@@ -30,17 +30,20 @@ build_dockerfile() {
     generated_warning > ./${version}/${1}/Dockerfile
     cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${version}-alpine"'!' >> ./${version}/${1}/Dockerfile
 
-    cp ./${1}/entrypoint.sh ${version}/${1}/entrypoint.sh
-    cp ./${1}/docker-install-${1} ${version}/${1}/docker-install-${1}
+    rm -f ./${version}/${1}/entrypoint.sh
+    cp ./${1}/entrypoint.sh ./${version}/${1}/entrypoint.sh
+    git add ./${version}/${1}/entrypoint.sh
 
-    LATEST_VERSION=${version}
+    rm -f ./${version}/${1}/docker-install-${1}
+    cp ./${1}/docker-install-${1} ./${version}/${1}/docker-install-${1}
+    git add ./${version}/${1}/docker-install-${1}
   done
 
-  echo "Build ./${1}/Dockerfile using latest version (${LATEST_VERSION})..."
-
-  rm -f ./${1}/Dockerfile
-  generated_warning > ./${LATEST_VERSION}/${1}/Dockerfile
-  cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
+#  echo "Build ./${1}/Dockerfile using latest version (${LATEST_VERSION})..."
+#
+#  rm -f ./${1}/Dockerfile
+#  generated_warning > ./${LATEST_VERSION}/${1}/Dockerfile
+#  cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
 
   # Update testing GitHub Workflow to include all supported versions
   PHP_IMAGES=$( printf "%s" "${PHP_IMAGES/%', '/}")
