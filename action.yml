@@ -8,6 +8,10 @@ inputs:
   phpunit_version:
     description: PHPUnit version
     default: ''
+  php_image:
+    description: PHP Image to use in Dockerfile
+    default: '9.0'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
