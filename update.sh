@@ -50,7 +50,6 @@ build_dockerfile() {
   cat ./${1}/Dockerfile.template | sed -e 's!%%PHP_VERSION%%!'"${LATEST_VERSION}-alpine"'!' >> ./${1}/Dockerfile
   git add ./${1}/Dockerfile
 
-
   # Update testing GitHub Workflow to include all supported versions
   PHP_IMAGES=$( printf "%s" "${PHP_IMAGES/%', '/}")
 
