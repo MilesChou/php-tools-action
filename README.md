@@ -12,7 +12,7 @@ Following is some example.
 
 ### `phpcs`
 
-> See https://github.com/squizlabs/PHP_CodeSniffer
+> See https://github.com/PHPCSStandards/PHP_CodeSniffer
 
 Run with default config.
 
